@@ -25,17 +25,20 @@
             let java = document.myform.java.value;
             console.log(java);
             let js = document.myform.js.value;
-
+            console.log(js);
+            
             // && and
             // || or
             // ! not
-
-            if (c >= 50 && java >= 50 && js >= 50){
+            if (c >=50 && c < 80 &&   java >= 50 && java < 80 && js >=50 && js < 80){
                 document.write("<h1>This student is Pass!</h1>")
-            }else {
+            }else if ( c < 50 || java < 50 ||  js < 50 ){
                 document.write("<h1>This student is Fail!</h1>")
+            }else {
+                document.write("<h1>This student get Distinction!</h1>")
             }
-        }
+           
+        }    
     </script>
 </body>
 </html>
