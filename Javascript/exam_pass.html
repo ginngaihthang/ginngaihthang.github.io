@@ -30,14 +30,56 @@
             // && and
             // || or
             // ! not
-            if (c >=50 && c < 80 &&   java >= 50 && java < 80 && js >=50 && js < 80){
-                document.write("<h1>This student is Pass!</h1>")
-            }else if ( c < 50 || java < 50 ||  js < 50 ){
-                document.write("<h1>This student is Fail!</h1>")
-            }else {
-                document.write("<h1>This student get Distinction!</h1>")
+            if (c >= 50 && java >= 50 && js >= 50) {
+                if (c > 80 && java > 80 && js > 80) {
+                    document.write(`<h1>This student get Distinction in Turbo C = ${c}</h1>`);
+                    document.write(`<h1>This student get Distinction in Java = ${java}</h1>`);
+                    document.write(`<h1>This student get Distinction in JavaScript = ${js}</h1>`);
+
+                } else if (c > 80 || java > 80 || js > 80) {
+                    if (c > 80) {
+                        document.write(`<h1>This student get Distinction Turbo C = ${c}</h1>`);
+                    }
+                    if (java > 80) {
+                        document.write(`<h1>This student get Distinction Java = ${java}</h1>`);
+                    }
+                    if (js > 80) {
+                        document.write(`<h1>This student get Distinction JavaScript = ${js}</h1>`);
+                    }
+                } else {
+                    document.write(`<h1>This student pass Turbo C = ${c}</h1>`);
+                    document.write(`<h1>This student pass Java = ${java}</h1>`);
+                    document.write(`<h1>This student pass JavaScript = ${js}</h1>`);
+                }
+            } else {
+                if (c < 50 && java < 50 && js < 50) {
+                    document.write(`<h1>This student fail Turbo C = ${c}</h1>`);
+                    document.write(`<h1>>This student fail Java = ${java}</h1>`);
+                    document.write(`<h1>>This student fail JavaScript = ${js}</h1>`);
+                } else {
+                    if (c < 50) {
+                        document.write("<h1>This student's Failed in Turbo C Programming Language!</h1>");
+                        document.write(`<h1>>This student fail Turbo C = ${c}</h1>`);
+                    }
+                    if (java < 50) {
+                        document.write(`<h1>>This student fail Java = ${java}</h1>`);
+                    }
+                    if (js < 50) {
+                        document.write(`<h1>>This student fail JavaScript = ${js}</h1>`);
+                    }
+                }
             }
-           
+
+            // if (c >= 50 && java >= 50 && js >= 50){
+            //     if (c > 80 || java > 80 || js > 80){
+            //         document.write("<h1>This student is Distinction</h1>")
+            //     }else {
+            //         document.write(<h1>This student is Pass</h1>)
+            //     }
+            // }else {
+            //     document.write("<h1>This student is Fail</h1>")
+            // }
+        
         }    
     </script>
 </body>
