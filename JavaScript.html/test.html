@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <label for="name">Name</label>
+    <input type="name" name="name" id="name">
+    <br>
+    <br>
+    <label for="age">Age</label>
+    <input type="age" name="age" id="age">
+    <br><br>
+    <button onclick="add()">Add</button>
+    <table border="1" cellspacing="0" cellpadding="26">
+        <thead>
+            <tr>
+                <th>No.</th>
+                <th>Name</th>
+                <th>Age</th>
+            </tr>
+        </thead>
+        <tbody id="tbody">
+            
+        </tbody>
+    </table>
+    <script>
+        function add(){
+            let data = [{
+                name:document.getElementById('name'),
+                age:document.getElementById('age')
+            }]
+            let tbody = document.getElementById('#tbody');
+            let mydata = '';
+            let i =1;
+
+            for (let row of data){
+                mydata += `<tr>
+                        <td>${i++}</td>
+                        <td>${row.name}</td>
+                        <td>${row.age}</tr>
+                    </tr>`
+            }
+            tbody.innerHTML = mydata;
+
+        }
+    </script>
+</body>
+</html>
