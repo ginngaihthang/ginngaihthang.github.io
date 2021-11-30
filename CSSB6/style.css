@@ -1,0 +1,28 @@
+h1{
+    color: blue;
+    text-align: center;
+    text-transform: uppercase;
+}
+small{
+    color: rgb(26, 43, 138);
+    line-height: 50px;
+    word-spacing: 30px;
+    letter-spacing: 10px;
+}
+/* universal selector */
+*{
+    margin: 0px;
+    padding:0px;
+
+}
+/* Tag selector / Element selector */
+h4{
+    color:red;
+    line-height: 40px;
+    text-align: justify;
+}
+/* Attribute selector*/
+a[title="google"]{
+    color: black;
+    text-decoration: none;
+}
