@@ -215,6 +215,7 @@
 
 .bestseller{
     font-family: pac;
+    font-weight: unset;
 }
 .best{
     margin: 20px -90px 0px ;
