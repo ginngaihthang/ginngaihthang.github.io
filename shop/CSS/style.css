@@ -1,0 +1,139 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+body{
+    background-color: #f0f2f5;
+}
+.navbar .nav_brand{
+    display: inline-block;
+}
+.navbar{
+    width: 100%;
+    height: 65px;
+    border: 1px solid rgb(182, 63, 63);
+    background-color: rgb(182, 63, 63);
+    position: fixed;
+}
+.logo_img .logo{
+    width: 50%;
+    height: 67px;
+    margin-left: 20px;
+    margin-top: -45px;
+}
+.nav_brand .brand_name {
+    margin-top: 25px;
+    margin-left: 125px;
+    color: white;
+}
+.navbar ul{
+    float: right;
+
+}
+.navbar ul li{
+    display: inline-block;
+    padding-top: 25px;
+    padding-right: 40px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.clear{
+    clear: both;
+}
+/* end Header */
+.img{
+    width: 100%;
+    height: 650px;
+}
+.lorem{
+    margin-top: -350px;
+    margin-left: 60px;
+}
+.lorem h2{
+    line-height: 50px;
+}
+.lorem button{
+    margin-top: 25px;
+    padding: 5px 20px;
+    border-radius: 5px;
+    background-color: #b63f3f;
+    color: white;
+   
+}
+.lorem button:hover{
+    background-color: turquoise;
+    color: white;
+    border-color: #b63f3f;
+}
+.last{
+    margin-top: 240px;
+    text-align: center;
+}
+.line{
+    width: 5%;
+    margin: auto;
+    color: maroon;
+}
+.product{
+    border: 1px solid white;
+    width: 87%;
+    height: 700px;
+    margin: auto;
+    margin-top: 40px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    background-color: white
+    
+}
+.product_img:hover{
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+.product .div_product{
+    
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    grid-row-gap: 20px;
+    width: 97%;
+    padding: 45px 20px 45px;
+}
+.prod{
+    text-align: center;
+}
+.prod del small{
+    color: red;
+}
+.flower{
+    display: grid;
+    grid-template-columns: auto auto auto auto;
+    text-align: center;
+    margin-top: 70px;
+    background-image: url(../image/img8.jpg);
+    line-height: 100px;
+    color: white;
+}
+.divide{
+    max-width: 40px;
+    margin: auto;
+}
+.pack{
+    float: left;
+    margin-top: 70px;
+    margin-left: 80px;
+}
+.packing{
+    padding-top: 85px;
+    margin-left: 670px;
+    margin-right: 50px;
+    
+}
+.packing p{
+    text-align: justify;
+    line-height: 20px;
+}
+.packing h3{
+    padding-top: 40px;
+}
+.pack_img{
+    margin-top: 20px;
+}

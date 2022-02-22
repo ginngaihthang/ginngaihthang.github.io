@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="border">
+        <div class="input"><input type="text" id="number"  placeholder="Calculate Number"></div>
+        <div class="input"><input type="text" id="number1"  placeholder="Calculate Number"></div>
+        <div class="input"><input type="text" id="result"  placeholder="Result"></div>
+        <div class="div">
+            <div><p onclick="seven()">7</p></div>
+            <div><p onclick="eight()">8</p></div>
+            <div><p onclick="nine()">9</p></div>
+            <div><p onclick="divided()">/</p></div>
+            <div><p onclick="four()">4</p></div>
+            <div><p onclick="five()">5</p></div>
+            <div><p onclick="six()">6</p></div>
+            <div><p onclick="multi()">x</p></div>
+            <div><p onclick="one()">1</p></div>
+            <div><p onclick="two()">2</p></div>
+            <div><p onclick="three()">3</p></div>
+            <div><p onclick="subst()">-</p></div>
+            <div><p onclick="zero()">0</p></div>
+            <div><p onclick="del()">del</p></div>
+            <div><p onclick="equal()">=</p></div>
+            <div><p onclick="plus()">+</p></div>
+        </div>
+    </div>
+    <script>
+        function zero(){
+            num0 = 0
+            document.querySelector('#number').value += num0
+        }
+        function one(){
+            num1=1
+                document.querySelector('#number').value += num1
+        }
+        function two(){
+            num2 = 2
+            document.querySelector('#number').value +=num2
+        }
+        function three(){
+            num3 =3
+            document.querySelector('#number').value +=num3
+        }
+        function four(){
+            num4 =4
+            document.querySelector('#number').value += num4
+        }
+        function five(){
+            num5= 5
+            document.querySelector('#number').value += num5
+        }
+        function six(){
+            num6= 6
+            document.querySelector('#number').value += num6
+        }
+        function seven(){
+            num7 =7
+            document.querySelector('#number').value += num7
+        }
+        function eight(){
+            num8 =8
+            document.querySelector('#number').value += num8
+        }
+        function nine(){
+            num9 = 9
+            document.querySelector('#number').value += num9
+        }
+        function plus(){
+            var num9="+"
+            document.querySelector('#number1').value += num9
+        }
+        function subst(){
+            var no="-"
+            document.querySelector('#number').value += no       
+        }
+        function divided(){
+            var divid= "/"
+            document.querySelector('#number').value += divid
+        }
+        function multi(){
+            var mul = "x"
+            document.querySelector('#number').value += num
+        }
+        function del (){
+            rem= ''
+            document.querySelector('#number').value = rem
+        }
+        function add(){
+            let number1 = one();
+            let number2 = two()
+            let number3 = three()
+            let number4 = four()
+            let number5 = five()
+            let number6 = six()
+            let number7 = seven()
+            let number8 = eight()
+            let number9 = nine()
+            let number0 = zero()
+            
+        }
+        function equal(){
+            document.querySelector('#result').value = Num
+        }
+    </script>
+</body>
+</html>

@@ -42,7 +42,7 @@ a[title="google"]{
     color: rgb(24, 216, 40);
 }
 .child > a{
-    color: rgb(13, 108, 124);
+    color: rgb(230, 75, 4);
 }
 a:link{
     color: red;
@@ -77,7 +77,7 @@ input[type="text"]:focus,input[type="number"]:focus,input[type="email"]:focus{
 }
 
 #dob{
-    width: 90%;
+    width: 100%;
 }
 #dob select{
     width: 30%;
@@ -105,7 +105,7 @@ input[type="checkbox"]:checked +label{
     font-style: normal;
 }
 
-input[typ-e="checkbox"]:disabled +label{
+input[type="checkbox"]:disabled +label{
     color: #fff;
 }
 ul li{
@@ -167,7 +167,7 @@ p:empty{
 .padding{
 
     border: 1px solid black;
-    padding: 40px;
+    padding: 60px;
     /* all four */
     /* padding: 30px 50px; */
     /* T/B  L/R */
@@ -247,7 +247,7 @@ div.floatright img{
     left: 100px;
 }
 .absolute_parent{
-    position:relative;
+    position: relative;
     border: 1px solid yellow;
     width: 1200px;
     height: 500px;
