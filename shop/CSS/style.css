@@ -3,28 +3,29 @@
     padding: 0px;
 }
 body{
-    background-color: #f0f2f5;
+    /* background-color: #ffc9d7; */
+    background-color: #fff;
 }
 .navbar .nav_brand{
     display: inline-block;
 }
 .navbar{
     width: 100%;
-    height: 65px;
-    border: 1px solid rgb(182, 63, 63);
-    background-color: rgb(182, 63, 63);
+    height: 90px;
+    border: 1px solid #36353b;
+    background-color: #36353b;
     position: fixed;
 }
 .logo_img .logo{
-    width: 50%;
-    height: 67px;
-    margin-left: 20px;
-    margin-top: -45px;
+    width: 150px;
+    height: 93px;
+    margin-top: -57px;
 }
 .nav_brand .brand_name {
-    margin-top: 25px;
-    margin-left: 125px;
+    margin-top:32px;
+    padding-left: 150px;
     color: white;
+    font-size: 20px;
 }
 .navbar ul{
     float: right;
@@ -32,7 +33,7 @@ body{
 }
 .navbar ul li{
     display: inline-block;
-    padding-top: 25px;
+    padding-top: 37px;
     padding-right: 40px;
     text-transform: uppercase;
     color: white;
@@ -67,6 +68,7 @@ body{
     border-color: #b63f3f;
 }
 .last{
+    font-weight: unset;
     margin-top: 240px;
     text-align: center;
 }
@@ -75,19 +77,20 @@ body{
     margin: auto;
     color: maroon;
 }
+
 .product{
     border: 1px solid white;
     width: 87%;
-    height: 700px;
+    height: 760px;
     margin: auto;
     margin-top: 40px;
     box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
     border-radius: 10px;
-    background-color: white
+    background-color: #f4f4f4;
     
 }
 .product_img:hover{
-    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 .product .div_product{
     
@@ -100,40 +103,234 @@ body{
 .prod{
     text-align: center;
 }
+.prod button{
+    display: inline-block;
+    border-radius: 4px;
+    padding: 9px 20px
+}
+.buy{
+    background-color: black;
+    border-color: black;
+    color: white;
+}
+.exp{
+    background-color: #df1b21;
+    border-color: rgb(119, 2, 2);
+    color: white;
+}
+.buy:hover{
+    background-color: white;
+    border-color:black;
+    color: black;
+    
+}
+.exp:hover{
+    background-color: rgb(255, 255, 255);
+    border-color: #df1b21;
+    color: #df1b21;;
+}
 .prod del small{
     color: red;
 }
-.flower{
-    display: grid;
-    grid-template-columns: auto auto auto auto;
-    text-align: center;
-    margin-top: 70px;
-    background-image: url(../image/img8.jpg);
-    line-height: 100px;
+.div_section {
+   display: grid;
+   grid-template-columns: auto auto auto;
+   margin-top: 40px;
+   margin-left: 400px;
+   text-align: center;
+   
+}
+.section1{
+    margin-left: 330px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #b63f3f;
+}
+.section2{
+    margin-left: 0px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #b63f3f;
+}
+.section3{
+    margin-right: 690px;
+    border: 1px solid black;
+    padding: 10px;
+    background-color: #b63f3f;
+}
+.section1:hover{
     color: white;
+    border-color: white;
 }
-.divide{
-    max-width: 40px;
-    margin: auto;
+.section2:hover{
+    color: white;
+    border-color: white;
 }
-.pack{
+.section3:hover{
+    color: white;
+    border-color: white;
+}
+
+
+.img_a13{
+    width: 50%;
+    height: 550px;
+    margin-top: 40px;
+    margin-left: 163px;
+}
+.about{
     float: left;
-    margin-top: 70px;
-    margin-left: 80px;
+    margin-top: 200px;
+    margin-left: 200px;
 }
-.packing{
-    padding-top: 85px;
-    margin-left: 670px;
-    margin-right: 50px;
+.about h1{
+    font-weight: unset;
+    color: rgb(90, 81, 81);
+}
+.abou{
+    line-height: 25px;
+    margin-left: 20px;
+    color: rgb(90, 81, 81);
+}
+
+.about button{
+    border-radius: 5px;
+    border-color: whitesmoke;
+    font-size: 15px;
+    font-weight: unset;
+    margin-top: 10px;
+    padding: 5px 15px
     
 }
-.packing p{
-    text-align: justify;
-    line-height: 20px;
+.newest{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    font-size: 30px;
+    font-weight: unset;
+    text-align: center;
 }
-.packing h3{
-    padding-top: 40px;
+.fornew{
+    width: 87%;
+    background-color: #f4f4f4;
+    border: 1px solid white;
+    margin: auto;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
-.pack_img{
+
+
+.new{
+    padding: 50px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-row-gap: 50px;
+    grid-column-gap: 40px;   
+}
+.fornew button{
+    margin-left: 50px;
+    margin-top: 0px;
+    margin-bottom: 40px;
+    padding: 10px 280px;
+    border-radius: 5px;
+    font-size: 15px;
+    color: white;
+   
+}
+.column{
+    width: 100%;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.propular{
+    text-align: center;
     margin-top: 20px;
+    font-weight: unset;
+}
+
+.auto{
+    float: right;
+    margin-right: 220px;
+    margin-top: 200px;
+}
+.auto h1{
+    
+    font-weight: unset;
+    color: rgb(90, 81, 81);
+}
+.auto_honda{
+    line-height: 25px;
+    margin-left: 20px;
+    color: rgb(90, 81, 81);
+}
+
+.auto button{
+    border-radius: 5px;
+    border-color: whitesmoke;
+    font-size: 15px;
+    font-weight: unset;
+    margin-top: 10px;
+    padding: 5px 15px
+    
+}
+.img_b8{
+    margin-left: 100px;
+    margin-top: 50px;
+}
+.rebel{
+    text-align: center;
+    font-size: 20px;
+    color: #666;
+    padding-top:  -30px;
+    margin-bottom: 20px;
+}
+.col{
+    grid-column-start: 1;
+    grid-column-end: 3;
+    grid-row-start: 1;
+    grid-row-end: 3;
+    width: 100%;
+    height: 100%;
+}
+
+.global{
+    margin-top: 40px;
+    text-align: center;
+    font-weight: unset;
+    font-size: 30px;
+}
+
+.repair img:hover{
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+.rounded{
+    margin-top: 40px;
+}
+
+.name{
+    text-align: center;
+    padding-top: 10px;
+    color: #666;
+}
+
+/* footer */
+.footer {
+    background-color: #f4f4f4;
+    height: 300px;
+    margin-top: 60px;
+    color: #666;
+
+}
+.footer a{
+    display: inline-block;
+    padding: 50px 20px 20px;
+    text-decoration: none;
+    color: #666;
+}
+.footer h2{
+    font-size: 50px;
+    text-transform: uppercase;
+    color: #c00
+}
+.footer p{
+    padding-top: 20px;
 }

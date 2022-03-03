@@ -10,7 +10,7 @@ body{
     background-color: rgba(119, 109, 100, 0.938);
     border: 1px solid black;
     width: 25%;
-    height: 373px;
+    height: 400px;
     margin-left: 500px;
     border-radius: 5px;
     border-color: rgb(60, 228, 228);
@@ -18,12 +18,22 @@ body{
 .input{
     padding-left: 17px;
     padding-top: 17px;
+    
 }
 input[type="text"]{
-    width: 93%;
-    height: 20px;
-    border-radius: 5px;
+    width: 86%;
+    height: 40px;
+    border-radius: 20px;
+    box-shadow: insert -5px -5px -12px #ffff;
     outline: none;
+    text-align: end;
+    font-size: 30px;
+    padding: 10px;
+
+
+}
+.clear{
+    clear: both;
 }
 input[type="text"]:focus{
     border: 2px solid deepskyblue;
@@ -41,7 +51,7 @@ input[type="text"]:hover{
     border-radius: 3px;
     width: 70%;
     height: 30px;
-    margin-top: 17px;
+    margin-top: 19px;
     text-align: center;
     padding-top: 10px;
     background-color: rgb(66, 57, 119);
@@ -49,6 +59,23 @@ input[type="text"]:hover{
     border-color: paleturquoise;
     box-shadow: 8px 8px 8px rgb(0, 0, 0 , .15);
 }
+.bottom{
+    display: inline-block;
+    border: 1px solid black;
+    border-radius: 3px;
+    width: 39.3%;
+    height: 30px;
+    margin-top: 17px;
+    margin-left: 17px;
+    text-align: center;
+    padding-top: 10px;
+    background-color: rgb(66, 57, 119);
+    color: white;
+    border-color: paleturquoise;
+    box-shadow: 8px 8px 8px rgb(0, 0, 0 , .15);
+
+}
+
 .div div p:hover{
     background-color: brown;
     border-color: cadetblue;

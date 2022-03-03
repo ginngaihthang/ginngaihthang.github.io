@@ -9,105 +9,168 @@
 </head>
 <body>
     <div class="border">
-        <div class="input"><input type="text" id="number"  placeholder="Calculate Number"></div>
-        <div class="input"><input type="text" id="number1"  placeholder="Calculate Number"></div>
-        <div class="input"><input type="text" id="result"  placeholder="Result"></div>
+        <div class="input"><input type="text" id="number"  placeholder="0"></div>
         <div class="div">
-            <div><p onclick="seven()">7</p></div>
-            <div><p onclick="eight()">8</p></div>
-            <div><p onclick="nine()">9</p></div>
-            <div><p onclick="divided()">/</p></div>
-            <div><p onclick="four()">4</p></div>
-            <div><p onclick="five()">5</p></div>
-            <div><p onclick="six()">6</p></div>
-            <div><p onclick="multi()">x</p></div>
-            <div><p onclick="one()">1</p></div>
-            <div><p onclick="two()">2</p></div>
-            <div><p onclick="three()">3</p></div>
-            <div><p onclick="subst()">-</p></div>
-            <div><p onclick="zero()">0</p></div>
+            <div><p onclick="display('7')">7</p></div>
+            <div><p onclick="display('8')">8</p></div>
+            <div><p onclick="display('9')">9</p></div>
             <div><p onclick="del()">del</p></div>
-            <div><p onclick="equal()">=</p></div>
-            <div><p onclick="plus()">+</p></div>
+            <div><p onclick="display('4')">4</p></div>
+            <div><p onclick="display('5')">5</p></div>
+            <div><p onclick="display('6')">6</p></div>
+            <div><p onclick="display('*')">x</p></div>
+            <div><p onclick="display('1')">1</p></div>
+            <div><p onclick="display('2')">2</p></div>
+            <div><p onclick="display('3')">3</p></div>
+            <div><p onclick="display('-')">-</p></div>
+            <div><p onclick="display('0')">0</p></div>
+            <div><p onclick="display('.')">.</p></div>
+            <div><p onclick="display('/')">/</p></div>
+            <div><p onclick="display('+')">+</p></div>
+            
+        </div>
+        <div class="bottom">
+            <p onclick="alldelete()">ac</p>
+        </div>
+        <div class="bottom">
+            <p class="cal" onclick="calculate()">=</p>
         </div>
     </div>
+    
     <script>
-        function zero(){
-            num0 = 0
-            document.querySelector('#number').value += num0
+        let number = document.querySelector("#number");
+        function display(num){
+            number.value += num;
         }
-        function one(){
-            num1=1
-                document.querySelector('#number').value += num1
+        function calculate(){
+            try{
+                number.value = eval(number.value)
+            }
+            catch(error){
+                number.value = 'undefined';
+            }
         }
-        function two(){
-            num2 = 2
-            document.querySelector('#number').value +=num2
+        function alldelete(){
+            number.value = '';
         }
-        function three(){
-            num3 =3
-            document.querySelector('#number').value +=num3
+        function del(){
+            number.value = number.value.slice(0,-1);
         }
-        function four(){
-            num4 =4
-            document.querySelector('#number').value += num4
-        }
-        function five(){
-            num5= 5
-            document.querySelector('#number').value += num5
-        }
-        function six(){
-            num6= 6
-            document.querySelector('#number').value += num6
-        }
-        function seven(){
-            num7 =7
-            document.querySelector('#number').value += num7
-        }
-        function eight(){
-            num8 =8
-            document.querySelector('#number').value += num8
-        }
-        function nine(){
-            num9 = 9
-            document.querySelector('#number').value += num9
-        }
-        function plus(){
-            var num9="+"
-            document.querySelector('#number1').value += num9
-        }
-        function subst(){
-            var no="-"
-            document.querySelector('#number').value += no       
-        }
-        function divided(){
-            var divid= "/"
-            document.querySelector('#number').value += divid
-        }
-        function multi(){
-            var mul = "x"
-            document.querySelector('#number').value += num
-        }
-        function del (){
-            rem= ''
-            document.querySelector('#number').value = rem
-        }
-        function add(){
-            let number1 = one();
-            let number2 = two()
-            let number3 = three()
-            let number4 = four()
-            let number5 = five()
-            let number6 = six()
-            let number7 = seven()
-            let number8 = eight()
-            let number9 = nine()
-            let number0 = zero()
-            
-        }
-        function equal(){
-            document.querySelector('#result').value = Num
-        }
+        // let input_num1 ;
+        // let input_num2 ;
+        // function zero(){
+        //     document.querySelector('#number').value += 0;
+        // }
+        // function one(){
+        //     document.querySelector('#number').value += 1;
+        // }
+
+        // function two(){
+        //     document.querySelector('#number').value += 2;
+        // }
+
+        // function three(){
+        //     document.querySelector('#number').value += 3;
+        // }
+
+        // function four(){
+        //     document.querySelector('#number').value += 4;
+        // }
+
+        // function five(){
+        //     document.querySelector('#number').value += 5;
+        // }
+
+        // function six(){
+        //     document.querySelector('#number').value += 6;
+        // }
+
+        // function seven(){
+        //     document.querySelector('#number').value += 7;
+        // }
+
+        // function eight(){
+        //     document.querySelector('#number').value += 8;
+        // }
+
+        // function nine(){
+        //     document.querySelector('#number').value += 9;
+        // }
+
+        // function plus(){
+        //     document.querySelector('#number').value += "+"
+        // }
+
+        // function subst(){
+        //     document.querySelector('#number').value += "-" 
+        // }
+
+        // function divided(){
+        //     document.querySelector('#number').value += "/"
+        // }
+
+        // function multi(){
+        //     document.querySelector('#number').value += "X"
+        // }
+
+        // function del (){
+        //     rem= 
+        //     document.querySelector('#number').value = rem
+        // }
+
+        // function adding(){
+        //     result =
+        // }
+        //for adding
+        // if(num1 == '1'){
+        //     input_num1 += 1;
+        // }if(two()){
+        //     input_num1 += 2;
+        // }if(three()){
+        //     input_num1 += 3;
+        // }if(four()){
+        //     input_num1 += 4;
+        // }if(five()){
+        //     input_num1 += 5;
+        // }if(six()){
+        //     input_num1 += 6;
+        // }if(seven()){
+        //     input_num1 += 7;
+        // }if(eight()){
+        //     input_num1 += 8;
+        // }if(nine()){
+        //     input_num1 += 9; 
+        // }if(zero()){
+        //     input_num1 += 0;
+        // }else if(add() || subst() || divided() || multi()){
+        //    
+        // }else{
+        //     if(one()){
+        //         input_num2 += 1;
+        //     }if(two()){
+        //         input_num2 += 2;
+        //     }if(three()){
+        //         input_num2 += 3;
+        //     }if(four()){
+        //         input_num2 += 4;
+        //     }if(five()){
+        //         input_num2 += 5;
+        //     }if(six()){
+        //         input_num2 += 6;
+        //     }if(seven()){
+        //         input_num2 += 7;
+        //     }if(eight()){
+        //         input_num2 += 8;
+        //     }if(nine()){
+        //         input_num2 += 9; 
+        //     }if(zero()){
+        //         input_num2 += 0;
+        //     }
+        // }
+        // if(add() = "+"){
+        //     document.querySelector('#number').value = Number(input_num1) + Number(input_num2); 
+        // }
+        
     </script>
 </body>
 </html>

@@ -6,16 +6,15 @@
     <meta name="viewport" content="width='device-width', initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="CSS/style.css">
+    <script src="javascript/main.js"></script>
 </head>
 <body>
 
     <nav class="navbar">
         <div class="nav_brand">
-            <div  class="brand_name">
-                <p>Ngaih Floral</p>
-            </div>
+            <p class="brand_name">Motorcycle Company</p>
             <div class="logo_img">
-                <img src="image/a3.jpg" alt="" class="logo">
+                <img src="image/f.jpg" alt="" class="logo">
             </div>        
         </div>
         <ul>
@@ -40,121 +39,193 @@
     </div>
 
     <div>
-        <h3 class="last">Lasted Product</h3>
+        <h1 class="last">Lasted Product</h1>
         <hr class="line">
     </div>
 
-    <div class="product">
+    <div class="product" id="product_item">
         <div class="div_product">
             <div class="prod">
                 <img src="image/a4.jpg" alt="" class="product_img" width="280" height="250">
                 <p>JAPAN</p>
                 <p>45000000MMK <del><small>6000000</small></del></p>
+                <button class="buy">BuyNow</button>
+                <button class="exp">Explore</button>
             </div>
             <div class="prod">
                 <img src="image/a5.jpg" alt="" class="product_img" width="280" height="250">
                 <p>JAPAN</p>
                 <p>5000000MMK <del><small>6000000</small></del></p>
+                <button class="buy">BuyNow</button>
+                <button class="exp">Explore</button>
             </div>
             <div class="prod">
                 <img src="image/a6.jpg" alt=""class="product_img"  width="280" height="250">
                 <p>THAILAND</p>
                 <p>5500000MMK <del><small>7000000</small></del></p>
+                <button class="buy">BuyNow</button>
+                <button class="exp">Explore</button>
             </div>
             <div class="prod">
                 <img src="image/a7.jpg" alt="" class="product_img" width="280" height="250">
                 <p>US</p>
                 <p>4500000MMK <del><small>5500000</small></del></p>
+                <button class="buy">BuyNow</button>
+                <button class="exp">Explore</button>
             </div>
             <div class="prod">
                 <img src="image/a8.jpg" alt="" class="product_img" width="280" height="250">
                 <p>ENGLAND</p>
                 <p>5700000MMK <del><small>6000000</small></del></p>
+                <button class="buy">BuyNow</button>
+                <button class="exp">Explore</button>
             </div>
             <div class="prod">
                 <img src="image/a9.jpg" alt="" class="product_img" width="280" height="250">
                 <p>ENGLAND</p>
                 <p>3500000MMK <del><small>4000000</small></del></p>
+                <button class="buy">BuyNow</button>
+                <button class="exp">Explore</button>
             </div>
             <div class="prod">
                 <img src="image/a10.jpg" alt="" class="product_img" width="250" height="250">
                 <p>THAILAND</p>
                 <p>6500000MMK <del><small>7000000</small></del></p>
+                <button class="buy">BuyNow</button>
+                <button class="exp">Explore</button>
             </div>
             <div class="prod">
                 <img src="image/a11.jpg" alt="" class="product_img" width="280" height="250">
                 <p>JAPAN</p>
                 <p>7500000MMK <del><small>8000000</small></del></p>
+                <button class="buy">BuyNow</button>
+                <button class="exp">Explore</button>
             </div>
         </div>
     </div>
-    <!-- <script>
-        function big(){
-            let img1=document.querySelector('.product_img')
-            img1.style.width = "275px"
-            img1.style.height = "340px"
-        }
-        function normal(){
-            let img1=document.querySelector('.product_img')
-            img1.style.width = "268.99"
-            img1.style.height = "3px"
-        }
-    </script>     -->
-    <div class="flower">
-        <div>
-            <h1>406</h1>
-            <hr class="divide">
-            <h3>Flower Arrangement</h3>
-        </div>
-        <div>
-            <h1>209</h1>
-            <hr class="divide">
-            <h3>Inpressive Boqute</h3>
-        </div>
-        <div>
-            <h1>3000</h1>
-            <hr class="divide">
-            <h3>Satisfied Clients</h3>
-        </div>
-        <div>
-            <h1>40</h1>
-            <hr class="divide">
-            <h3>Partners</h3>
-        </div>
+
+
+    <div class="div_section">
+        <a href="#product_item"><p class="section1" onclick="one()" id="index.html">1</p></a>
+        <a href="other.html"><p class="section2" onclick="two()">2</p></a>
+        <p class="section3" onclick="three()">3</p>
     </div>
 
-    
-    <div>
-        <div class="pack">
-            <h1 >How To Make Packing?</h1>
-            <img src="image/img9.jpg" alt="" class="pack_img">
-        </div>
-        <div class="packing">
-            <h3>Planning</h3>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Libero rerum ea velit. Id odit ipsam similique optio qui omnis iste suscipit debitis ut, magni, nobis dolorem esse asperiores dolorum perferendis blanditiis nesciunt ab repudiandae non? Laborum beatae provident explicabo mollitia.</p>
-            <h3>Planning</h3>
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Distinctio voluptates magnam deserunt provident, doloribus beatae? Adipisci eos voluptas dolores aperiam, quaerat incidunt placeat nulla nemo, iure esse voluptatem laudantium! Adipisci.</p>
-            <h3>Planning</h3>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Maiores soluta error fugiat cupiditate nam dignissimos vitae culpa ex, unde sequi voluptate? Praesentium iusto, cum aut quos necessitatibus omnis mollitia! Nulla est provident odit explicabo debitis quo reiciendis facilis ipsa a quas nihil laudantium iusto animi, saepe, error earum? Voluptatibus, possimus.</p>
-        </div>
+    <div class="about">
+        <h1>Over 400,000,000 units</h1>
+        <p class="abou">have been produced globaly since Honda started <br> motorcycle production in 1949. Honda is now <br> producing at 35 plants in 21 countries.</p>
+        <button class="abou">More  ></button>
     </div>
-
+    <div class="a13">
+        <img src="image/a13.jpg" alt="" class="img_a13">
+    </div>
     <div class="clear"></div>
 
-    <div>
-        <div>
-            <i class="fas fa-shipping-fast fa-3x"></i>
-            <p>Free Shipping <br> Fororder form $50</p>
+    <h2 class="newest">Newest Model</h2>
+    <div class="fornew">
+        <div class="new repair">
+            <img src="image/a23.jpg" alt="" class="column">
+            <img src="image/a27.jpg" alt="" width="400" height="300">
+            <img src="image/a22.jpg" alt="" width="400" height="300">
+            <img src="image/a26.jpg" alt="" width="400" height="300">
+            <img src="image/a25.jpg" alt="" width="400" height="300">
+            <img src="image/a24.jpg" alt="" width="400" height="300">
+            <img src="image/a23.jpg" alt="" width="400" height="300">
         </div>
-        <div>
-            <p>Free Shipping <br> Fororder form $50</p>
+        <button class="buy">BuyNow</button>
+        <button class="exp">Explore</button>
+    </div>
+    
+    <div class="auto">
+        <h1>India AutoBite</h1>
+        <p class="auto_honda">This priduct is usually used by female where they want to go. <br> motorcycle production in 1949.This is now <br> producing at 35 plants in 21 countries.</p>
+        <button class="auto_honda">More  ></button>
+    </div>
+    <img src="image/b8.jpg" alt="" class="img_b8">
+
+    <h1 class="propular">Propular Design</h1>
+    <div class="fornew">
+        <div class="new repair">
+            <img src="image/c1.jpg" alt="" class="col">
+            <img src="image/c2.jpg" alt="" width="400" height="300">
+            <img src="image/c3.jpg" alt="" width="400" height="300">
+            <img src="image/c4.jpg" alt="" width="400" height="300">
+            <img src="image/c5.jpg" alt="" width="400" height="300">
+            <img src="image/c6.jpg" alt="" width="400" height="300">
         </div>
-        <div>
-            <p>Free Shipping <br> Fororder form $50</p>
-        </div>
-        <div>
-            <p>Free Shipping <br> Fororder form $50</p>
+        <p class="rebel">Rebel 500</p>
+        <button class="buy">BuyNow</button>
+        <button class="exp">Explore</button>
+    </div>
+
+    <h2 class="global">Global Models 2022</h2>
+
+    <div class="fornew rounded">
+        <div class="new repair">
+            <div>
+                <img src="image/d1.jpg" alt="" width="400" height="400">
+                <p class="name">CBR600RR</p>
+            </div>
+            <div>
+                <img src="image/d2.jpg" alt="" width="400" height="400">
+                <p class="name">CBR250RR* <br> *Photo is Japan domestic model</p>
+            </div>
+            <div>
+                <img src="image/d3.jpg" alt="" width="400" height="400">
+                <p class="name">CB125R</p>
+            </div>
+            <div>
+                <img src="image/d4.jpg" alt="" width="400" height="400">
+                <p class="name">CBR600RR</p>
+            </div>
+            <div>
+                <img src="image/d5.jpg" alt="" width="400" height="400">
+                <p class="name">CB1000R</p>
+            </div>
+            <div>
+                <img src="image/d6.jpg" alt="" width="400" height="400">
+                <p class="name">CB125R</p>
+            </div>
+            <div>
+                <img src="image/d7.jpg" alt="" width="400" height="400">
+                <p class="name">CJ7</p>
+            </div>
+            <div>
+                <img src="image/d8.jpg" alt="" width="400" height="400">
+                <p class="name">CRF1100L Africa Twin</p>
+            </div>
+            <div>
+                <img src="image/d9.jpg" alt="" width="400" height="400">
+                <p class="name">CBR600RR</p>
+            </div>
+            <div>
+                <img src="image/d10.jpg" alt="" width="400" height="400">
+                <p class="name">CB250R / CB300R</p>
+            </div>
+            <div>
+                <img src="image/d11.jpg" alt="" width="400" height="400">
+                <p class="name">CRF1100L Africa Twin</p>
+            </div>
+            <div>
+                <img src="image/d12.jpg" alt="" width="400" height="400">
+                <p class="name">CB250R / CB300R</p>
+            </div>
         </div>
     </div>
+    
+    <footer>
+        <center class="footer">
+            <a href="">Home</a>
+            <a href="">Shop</a>
+            <a href="">Blog</a>
+            <a href="">About</a>
+            <a href="">Contact</a>
+            <h2>Honda</h2>
+            <p>Designed By Gin Ngaih @2022</p>
+        </center>
+    </footer>
+
+    
+    
 </body>
 </html>
