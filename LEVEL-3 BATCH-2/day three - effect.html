@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(param){
+            $("#hide").on('click',function(){
+                $("p").hide(4000);
+            })
+
+            $("#show").on('click',function(){
+                $("p").show();
+            })
+
+            $("#toggle").on('click',function(){
+                $("p").toggle();
+            })
+
+            $("#fadein").on('click',function(){
+                $("p").fadeIn();
+            })
+
+            $("#fadeout").on('click',function(){
+                $("p").fadeOut();
+            })
+
+            $("#fadetoggle").on('click',function(){
+                $("p").fadeToggle();
+            })
+
+            $("#fadeto").on('click',function(){
+                $("div").fadeTo("slow",0.5);
+            })
+
+            $("#slidedown").on('click',function(){
+                $("p").slideDown();
+            })
+
+            $("#slideup").on('click',function(){
+                $("p").slideUp("fast");
+            })
+
+            $("#slidetoggle").on('click',function(){
+                $("p").slideToggle("fast");
+            })
+
+            $("#animateone").on('click',function(){
+                $("div").animate({left:'200px'});
+            })
+
+            $("#animatetwo").on('click',function(){
+                $("div").animate({
+                    left: '200px',
+                    height: '+=150px',
+                    width: '+=150px'
+                });
+            })
+        })
+    </script>
+</head>
+<body>
+    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Error illo blanditiis pariatur, incidunt autem, vero ipsum sint hic nihil deserunt obcaecati veritatis animi voluptatem. Doloribus facilis ab ea totam corrupti.</p>
+
+    <div style="width: 100px;height: 100px;background-color: red; position:relative"></div>    
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+
+    <button id="fadein">Fadein</button>
+    <button id="fadeout">Fadeout</button>
+    <button id="fadetoggle">FadeToggle</button>
+    <button id="fadeto">FadeTo</button>
+
+    <button id="slidedown">Slidedowm</button>
+    <button id="slideup">SlideUp</button>
+    <button id="slidetoggle">SlideToggle</button>
+
+    <button id="animateone">Animate One</button>
+    <button id="animatetwo">Animate Two</button>
+
+</body>
+</html>

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+       $(function(param){
+            $("#myform").on("submit",function(e){
+                var username = $.trim($("#username").val());
+                var age = Number ($("#age").val());
+                // console.log(age);
+                // console.log(`${username} - ${age}`)
+                // console.log($.typw(age))
+                var person = {
+                    name: username,
+                    age: age
+                }
+                console.log(person)
+                localStorage.setItem("person",JSON.stringify(person));
+                e.preventDefault();
+            })
+            $(".addtocart").on("click",function(param){
+                //******
+                var name = $(this).data("name");
+                var price = $(this).data ("price");
+                var id = $(this).data("id");
+                
+                let qty = 1
+                var item = {
+                    id: id, name: name, price: price, qty: 1
+                }
+                // let i = 1
+                // while(id  ==1 ){
+                //     qty +=1
+                //     i++
+                // }
+                console.log(item)
+                var cartArr = []
+                var cartStr = localStorage.getItem('cart');
+                //console.log(cartStr)
+                //console.log($.type(cartStr));
+                if(!cartStr){
+                    cartArr = item
+                    //cartArr.push(item)
+                }else{
+                    cartArr = JSON.parse(cartStr);
+                    //console.log(cartArr)
+                    
+                    cartArr.push(item);
+                    
+                }
+                localStorage.setItem('cart',JSON.stringify(cartArr))
+            })
+       })
+    </script>
+</head>
+<body>
+    <form action="" id="myform">
+        <input type="text" name="username" placeholder="Mg Mg" id="username"><br>
+        <input type="number" name="age" id="age"><br>
+        <input type="submit" value="Save">
+    </form>
+
+    <div class="card">
+        <img src="image/5.jpg" alt="" width="200">
+        <p>Item One</p>
+        <button class="addtocart" data-name="Item One" data-price="5000" data-id="1">Add</button>
+    </div>
+
+    <div class="card">
+        <img src="image/5.jpg" alt="" width="200">
+        <p>Item Two</p>
+        <button class="addtocart" data-name="Item Two" data-price="4500" data-id="2">Add</button>
+    </div>
+</body>
+</html>

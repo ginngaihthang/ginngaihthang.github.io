@@ -1,0 +1,183 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(param){
+            var btn = $(".mybtn")
+            var el = $("div.foo").has("p");
+            btn.on('click',function(param){
+                $("p").hide();
+            })
+
+            var hide = $(".hide");
+            var bar = $("h1").not(".bar");
+            hide.on('click',function(param){
+                bar.hide();
+            })
+
+            var tes1_li = $("ul li").filter(".current");
+            tes1_li.on('click',function(param){
+                tes1_li.hide(2000,function(param){
+                    alert('Hided Element')
+                });
+            })
+
+            var change = $(".change");
+            var tes2_li = $("ul li").first();
+            change.on('click',function(parma){
+                tes2_li.hide();
+            })
+
+            $("ul li").eq(5).hide();
+            change.on('click',function(param){
+                $("ul li").eq(5).show(2000,function(parma){
+                    alert("Show Elemnte")
+                });
+            })
+
+        })
+    </script>
+</head>
+<body>
+    <div class="foo">
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Beatae atque nostrum cupiditate est nam doloremque mollitia cumque quaerat quisquam neque?</p>
+    </div>
+    <button class="mybtn">Click</button>
+
+
+    <h1>Hello World <small>class = none</small></h1>
+    <h1 class="bar">I love JQUERY <small>class="bar"</small> </h1>
+    <input type="button" class="hide" value="Hide">
+
+
+    <p>If you want to hide 'Two' ,press Two.</p>
+    <ul>
+        <li>One</li>
+        <li class="current">Two</li>
+        <li>Three</li>
+        <li>Four</li>
+        <li>Five</li>
+        <li>Six</li>
+    </ul>
+    <button class="change"> Change</button>
+    
+</body>
+</html> -->
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(param){
+            $("#hide").on('click',function(){
+                $("p").hide('slow');
+            })
+
+            $("#show").on('click',function(){
+                $("p").show("slow");
+            })
+
+            $("#toggle").on('click',function(){
+                $("p").toggle('slow');
+            })
+
+            $("#fadein").on('click',function(){
+                $("p").fadeIn();
+            })
+            
+            $("#fadeout").on('click',function(){
+                $("p").fadeOut();
+            })
+
+            $("#fadetoggle").on('click',function(){
+                $("p").fadeToggle();
+            })
+
+            $("#fadeto").on('click',function(){
+                $("p").fadeTo('slow',0.5);
+            })
+
+            $("#slidedown").on('click',function(){
+                $("p").slideDown();
+            })
+
+            $("#slideup").on('click',function(){
+                $("p").slideUp();
+            })
+
+            $("#slidetoggle").on('click',function(){
+                $("p").slideToggle();
+            })
+
+            $("#animate").on('click',function(){
+                $("div").animate({
+                    left: '300px'
+                });
+            })
+
+            $("#animate1").on('click',function(){
+                $("div").animate({
+                    right: '300px'
+                });
+            })
+
+            $("#animate2").on('click',function(){
+                $("div").animate({
+                    height: '+300px'
+                });
+            })
+
+            $("#animat3e").on('click',function(){
+                $("div").animate({
+                    width: '+300px'
+                });
+            })
+            
+
+        })
+    </script>
+</head>
+<body>
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Minima nihil necessitatibus a quam aut. Iste sed beatae delectus id, laborum sunt ut hic suscipit impedit nulla et asperiores, deserunt cum.</p>
+    <div style="width: 100px;height: 100px; background-color:red; position:relative;"></div>
+    <button id="hide">Hide</button>
+    <button id="show">Show</button>
+    <button id="toggle">Toggle</button>
+
+    <button id="fadein">FadeIn</button>
+    <button id="fadeout">FadeOut</button>
+    <button id="fadetoggle">FadeToggle</button>
+    <button id="fadeto">FadeTo</button>
+    <button id="slidedown">Slidedowm</button>
+    <button id="slideup">SlideUP</button>
+    <button id="slidetoggle">SlideToggle</button>
+
+    <button id="animate">-></button>
+    <button id="animate1"><-</button>
+    <button id="animate2">^</button>
+    <button id="animate3">v</button>
+
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+</html>
