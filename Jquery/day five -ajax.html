@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        
+        li{
+            list-style-type: none;
+            display: block;
+            
+            margin: 30px 20px 10px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            border: 1px solid  white
+            
+        }
+        a{
+            text-decoration: none;
+            color: black;
+        }
+        #memes{
+            text-align: center;
+            justify-content: center;
+           
+            display: grid;
+            grid-template-columns: repeat(4,250px)
+        }
+        #click{
+            background-color: #df1b21;
+            border-style: inset;
+            border-bottom-right-radius: 10px;
+            border-top-left-radius: 10px;
+            color: white;
+            padding: 5px 15px;
+        }
+        #memes_name{
+            font-weight: bold;
+            font-size: 20px;
+        }
+        input{
+            display: none;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(param){
+            // $.ajax({
+            //     url: "https://api.imgflip.com/get_memes",
+            //     type: "GET",
+            //     dataType: "json",
+            // }).done(function(json){
+            //     console.log(json.data.memes)
+            //     var data= ""
+            //     $.each(json.data.memes,function(i,v){
+            //         data += `<img src="${v.url}" width= "100">`
+            //     })
+
+            //     $("#memes").html(data)
+            // })
+            $("#btn").on('click',function(param){
+                $.get("https://api.imgflip.com/get_memes",function(response){
+                    
+                var data = ""
+                $.each(response.data.memes,function(i,v){
+                    data += `<li>
+                            <a href="${v.name}" id="memes_name">${v.name}</a>
+                            <img src="${v.url}" width="200" style="padding-top: 25px"> 
+                            <a href="${v.url}" id="link" >
+                               <button id="click">Click</button> 
+                                </a>
+                        </li>
+                        `    
+                })
+                console.log(response.data.memes)
+                $("#memes").html(data)
+                }) 
+             }) 
+             $("#memes").on('click','#memes_name',function(e){
+                 e.preventDefault();
+             })
+            
+             $("#memes").on("click","#link",function(param){
+                var current_tab = $(this)
+                var id = $("#template_id").val()
+                var name = $("#username").val()
+                var password = $("password").val()
+                var text0 = $("text0").val()
+                var text1 = $("this1").val()
+                $.post("https://api.imgflip.com/caption_image",{ 
+                   
+                    template_id: '181913649',
+                    username: "ThetPaingHtut",
+                    password: "1234!@#$apple",
+                    text0: "hi",
+                    text1: "Hello",
+                    
+                },function(response){
+
+                    //console.log(response)
+                    var img =`<img src="${response.data.url}" width="500">`
+                    $("#memes").html(img)
+                })
+            })
+            
+            // $("#btnpost").on("click",function(param){
+            //     var id = $("#template_id").val()
+            //     var name = $("#username").val()
+            //     var password = $("password").val()
+            //     var text0 = $("text0").val()
+            //     var text1 = $("this1").val()
+            //     $.post("https://api.imgflip.com/caption_image",{ 
+            //         template_id: '181913649',
+            //         username: "ThetPaingHtut",
+            //         password: "1234!@#$apple",
+            //         text0: "hi",
+            //         text1: "Hello",
+                    
+            //     },function(response){
+            //         //console.log(response)
+            //         var img =`<img src="${response.data.url}" width="500">`
+            //         $("#memes").html(img)
+            //     })
+            // })
+
+        })
+    </script>
+</head>
+<body>
+
+    <input type="number" class="user_input" id="template_id" placeholder="template_id">
+    <input type="text" class="user_input"  id="username" placeholder="username">
+    <input type="text" class="user_input" id="password" placeholder="password" >
+    <input type="text" class="user_input" name="text0" id="text0" placeholder="text0">
+    <input type="button" class="user_input" value="Generate">
+
+    <button id="btn">GETmethod</button>
+    <button id="btnpost">PostMethod</button>
+    
+    <div id="memes">
+        
+    </div>
+    
+</body>
+</html>

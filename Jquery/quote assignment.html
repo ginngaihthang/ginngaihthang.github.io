@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: opx;
+            padding: 0px;
+        }
+        #quote_div{
+            width: 50%;
+            box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+            margin: auto;
+            background-color: aliceblue;
+            text-align: center;
+        }
+        #quote_div{
+            font-size: 20px;
+        }
+        #btn{
+            box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+            border-style: outset;
+            border: none;
+            background-color: white;
+            padding: 30px 60px;
+            margin: auto;
+            font-size: 24px;
+            background-color: #BE93FD;
+            border-radius: 6px;
+        }
+        .btn{
+            width: 50%;
+            border: 1px solid black;
+            border-bottom-left-radius: 30px;
+            border-top-right-radius: 30px;
+            margin: 300px auto;
+            text-align: center;
+            padding: 150px 0px;
+            background-color: #E1B4FF;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(param){
+            $("#btn").on("click",function(param){
+                $.ajax({
+                url: "https://type.fit/api/quotes",
+                type: "GET",
+                dataType: "json",
+            }).done(function(json){
+                console.log(json)
+                var data =""
+                $.each(json,function(i,v){
+                    data +=`<div id="quote_div">
+                                <p><q>${json[i].text}</q></p>
+                                    <p>Written By - ${json[i].author}</p>
+                            </div>
+                            `
+                })
+                $("#quotes").html(data)
+            })
+            })
+        })
+    </script>
+</head>
+<body>
+    <div id="quotes"></div>
+    <div class="btn">
+        <button id="btn">Show</button>
+    </div>
+    
+</body>
+</html>
