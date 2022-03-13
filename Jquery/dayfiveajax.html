@@ -72,15 +72,17 @@
             // })
             $("#btn").on('click',function(param){
                 $.get("https://api.imgflip.com/get_memes",function(response){
-                    
+                    $("input").show()
                 var data = ""
                 $.each(response.data.memes,function(i,v){
                     data += `<li>
                             <a href="${v.name}" id="memes_name">${v.name}</a>
-                            <img src="${v.url}" width="20" height="260" style="padding-top: 25px"> 
-                            <a href="${v.url}" id="link" >5
+                            <p data-id="code_number">${v.id}</p>
+                            <img src="${v.url}" width="205" height="260" style="padding-top: 25px"> 
+                            <a href="${v.url}" id="link" >
                                <button id="click">Click</button> 
                                 </a>
+                                
                         </li>
                         `    
                 })
@@ -116,13 +118,9 @@
             // })
             
             $("#btnpost").on("click",function(param){
-                // var id = $("#template_id").val()
-                // var name = $("#username").val()
-                // var password = $("password").val()
-                // var text0 = $("text0").val()
-                // var text1 = $("this1").val()
+                
                 $.post("https://api.imgflip.com/caption_image",{ 
-                    template_id: '181913649',
+                    template_id: $(this).data("code-number"),
                     username: "ThetPaingHtut",
                     password: "1234!@#$apple",
                     text0: "hi",
@@ -140,9 +138,9 @@
 </head>
 <body>
 
-    <input type="number" class="user_input" id="template_id" placeholder="template_id">
+    <!-- <input type="number" class="user_input" id="template_id" placeholder="template_id">
     <input type="text" class="user_input"  id="username" placeholder="username">
-    <input type="text" class="user_input" id="password" placeholder="password" >
+    <input type="text" class="user_input" id="password" placeholder="password" > -->
     <input type="text" class="user_input" name="text0" id="text0" placeholder="text0">
     <input type="button" class="user_input" value="Generate">
     <input type="text" name="txt" value="Hello" onchange="myFunction(this.value)">
