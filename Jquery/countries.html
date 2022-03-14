@@ -44,6 +44,27 @@
             margin-left: 20px;
             color: rgb(88, 82, 82);
         }
+        #countries li .about{
+            margin: auto;
+        }
+        .about{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            background: none;
+            border: none;
+            padding: 5px 20px;
+        }
+        .about:hover{
+            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
+        }
+        .flag {
+            text-align: center;
+        }
+        .flag p{
+            text-align: center;
+            line-height: 30px;
+            font-size: 20px;
+            color: rgb(69, 74, 78);
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -70,9 +91,10 @@
                 dataType: "json",
             }).done(function(json){
                 console.log(json)
-                var data =""
+                var allData =""
+                var data = ""
                 $.each(json,function(i,v){
-                    data +=`
+                    allData +=`
                             <li>
                                 <img src="${v.flags.png}" width="212" height="170px">
                                 <p class="name"> ${v.name.common}</p>
@@ -80,13 +102,34 @@
                                     <P >Capital : ${v.capital}</p>
                                     <P>Region : ${v.region}</p>
                                     <P>Population : ${v.population}</p>
-                                </div>    
+                                        <button class="about" data-index="${i}">About</button>
+                                </div>
+                                
                             </li>
                             
                             `
                 })
-                $("#countries").html(data)
-                
+                $("#countries").html(allData)
+                $("#countries").on('click',"button",function(param){
+                    $("#countries").hide();
+                    var index = $(this).data("index")
+                    if(index != -1){
+                        data +=`
+                                <div class="flag">
+                                    <img  src="${json[index].flags.png}" width= "340px" height="250px" >
+                                    <p>Name:${json[index].name.common}</p>
+                                    <p>Capital:${json[index].capital}</p>
+                                    <p>Capital:${json[index].region}</p>
+                                    <p>Language:${json[index].languages.swe}</p>
+                                    <p>Population:${json[index].population}</p>
+                                    <p>Area:${json[index].area}</p>
+                                    <p>Capital:${json[index].name.official}</p>
+                                </div>
+                                
+                        `
+                    }
+                    $("#show").html(data)
+                })
             })
 
         })
@@ -94,6 +137,9 @@
 </head>
 <body>
     <div id="countries">
+
+    </div>
+    <div id="show">
 
     </div>
     

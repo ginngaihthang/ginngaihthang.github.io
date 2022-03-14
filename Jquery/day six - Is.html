@@ -42,15 +42,23 @@
                 var cartStr = localStorage.getItem('cart');
                 //console.log(cartStr)
                 //console.log($.type(cartStr));
+                
                 if(!cartStr){
-                    cartArr = item
+                    cartArr.push(item)
                     //cartArr.push(item)
                 }else{
                     cartArr = JSON.parse(cartStr);
-                    //console.log(cartArr)
+                    var old = false
+                    $.each(cartArr,function(i,v){
+                        if(v.id == id && old == false){
+                        qty++
+                        old = true
+                    }
                     
-                    cartArr.push(item);
-                    
+                    })
+                    if(old == false){
+                        cartArr.push(item);
+                    }
                 }
                 localStorage.setItem('cart',JSON.stringify(cartArr))
             })

@@ -35,7 +35,7 @@
             display: grid;
             grid-template-columns: repeat(4,250px)
         }
-        #click{
+        .click{
             background-color: white;
             box-shadow: rgba(0, 0, 0, 0.05) 0px 0px 0px 1px, rgb(209, 213, 219) 0px 0px 0px 1px ;
             margin-top: 15px;
@@ -47,7 +47,7 @@
             color: black;
             
         }
-        #click:hover{
+        .click:hover{
             box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
         }
         #memes_name{
@@ -85,6 +85,7 @@
             // })
             $("#btn").on('click',function(param){
                 $.get("https://api.imgflip.com/get_memes",function(response){
+                    console.log(response)
                     $("input").show()
                 var data = ""
                 $.each(response.data.memes,function(i,v){
@@ -92,9 +93,8 @@
                             <a href="${v.name}" id="memes_name">${v.name}</a>
                             <p data-id="code_number">${v.id}</p>
                             <img src="${v.url}" data-id="image" width="205" height="260" style="padding-top: 25px"> 
-                            <a href="${v.url}" id="link" >
-                               <button id="click">Click</button> 
-                                </a>
+                            
+                            <button class="click"  data-id="${v.id}" data-count="${v.box_count}">Click</button> 
                                 
                         </li>
                         `    
@@ -104,42 +104,42 @@
                 }) 
              }) 
              $("#memes").on('click','#memes_name',function(e){
-                e.preventDefault();
+                e.preventDefault()
              })
             
-            //  $("#memes").on("click","#link",function(param){
-                
-            //     var id = $("#template_id").val()
-            //     var name = $("#username").val()
-            //     var password = $("password").val()
-            //     var text0 = $("text0").val()
-            //     var text1 = $("this1").val()
-            //     $.post("https://api.imgflip.com/caption_image",{ 
-                   
-            //         template_id: '181913649',
-            //         username: "ThetPaingHtut",
-            //         password: "1234!@#$apple",
-            //         text0: "hi",
-            //         text1: "Hello",
-                    
-            //     },function(response){
-
-            //         //console.log(response)
-            //         var img =`<img src="${response.data.url}" width="500">`
-            //         $("#memes").html(img)
-            //     })
-            // })
             
-            $("#generate").on("click",function(param){
-                $.post("https://api.imgflip.com/caption_image",{ 
-                    template_id: $(this).data("code-number"),
+            
+            $("#memes").on("click","button",function(param){
+                var id = $(this).data("id")
+                var count = $(this).data("box_count")
+                var text = []
+
+                for (let i = 0;i < count;i++){
+                    let text1 = prompt(`enter meme text`)
+                    text.push(text1)
+                }
+                
+                $.post("https://api.imgflip.com/caption_image",{
+                    template_id: id,
                     username: "ThetPaingHtut",
                     password: "1234!@#$apple",
-                    text0: "hi",
-                    text1: "Hello",
-                    
+                    max_font_size: "25px",
+                    boxes: [
+                        {
+                        "text": text[0],
+                        },{
+                        "text": text[1],
+                        },{
+                        "text": text[2],
+                        },{
+                        "text": text[3],
+                        },{
+                        "text": text[4],
+                        },{
+                        "text": text[5],
+                        },
+                ,]
                 },function(response){
-                    //console.log(response)
                     var img =`<img src="${response.data.url}" width="500">`
                     $("#memes").html(img)
                 })
@@ -150,15 +150,8 @@
 </head>
 <body>
 
-    <!-- <input type="number" class="user_input" id="template_id" placeholder="template_id">
-    <input type="text" class="user_input"  id="username" placeholder="username">
-    <input type="text" class="user_input" id="password" placeholder="password" > -->
-    <!-- <input type="text" class="user_input" name="text0" id="text0" placeholder="text0">
-    <input type="button" class="user_input" id="generate" value="Generate">
-    <input type="text" name="txt" value="Hello" onchange="myFunction(this.value)"> -->
-
+   
     <button id="btn">GETmethod</button>
-    <!-- <button id="btnpost">PostMethod</button> -->
     
     <div id="memes">
         
