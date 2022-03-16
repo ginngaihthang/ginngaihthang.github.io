@@ -8,115 +8,111 @@
     <style>
         *{
             margin: 0px;
-
             padding: 0px;
         }
         body{
             background: linear-gradient(to right,#845EC2,#00C9A7);
         }
-        #countries{
-            width: 80%;
-            margin: auto;
+        .nav_bar{
+            width: 100%;
+            position: fixed;
+            /* border: 1px solid black; */
+            background-color: black;
             
-            justify-content: center;
-            display: grid;
-            grid-template-columns: repeat(4,252px)
         }
-        li{    
-            margin: 30px 20px 10px;
-            display: block;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-            
-            /* border: 1px solid  black */
-        }
-        li:hover{
-            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-        }
-        .name{
-            margin-top: 15px;
-            margin-left: 20px;
-            margin-bottom: 10px;
+        .title{
+            padding: 10px 0px;
+            text-align: center;
+            font-size: 17px;
+            text-transform: uppercase;
+            color: white;
+            word-spacing: 5px;
+            /* letter-spacing: 3px; */
+            font-weight: unset;
             font-family: 'Lobster',cursive;
         }
-        .capital{
-            line-height: 25px;
-            margin-bottom: 10px;
-            margin-left: 20px;
-            color: rgb(88, 82, 82);
+        #countries{
+            justify-content: center;
+            display: grid;
+            grid-template-columns: auto auto ;
+            
         }
-        #countries li .about{
-            margin: auto;
+        .border_img{
+            padding: 10px;   
         }
-        .about{
+        .flag_border{
             box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-            background: none;
+            /* border-radius: 10px; */
+            width: 170px;
+        
+        }
+        .flag_border:hover{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+        }
+        .name{
+            margin-top: 10px;
+            margin-left: 20px;
+            font-family: 'Lobster',cursive;
+        }
+        .words{
+            line-height: 20px;
+            color: rgb(97, 110, 110);
+            margin-left: 20px;
+        }
+        .btn{
+            padding: 5px 30px;
+            margin-left: 35px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
             border: none;
-            padding: 5px 20px;
+            background: none;
+            margin-top: 5px;
+            margin-bottom: 7px;
         }
-        .about:hover{
-            box-shadow: rgba(0, 0, 0, 0.15) 0px 2px 8px;
-        }
-        .flag {
+        .flag{
             text-align: center;
+            color: white;
         }
-        .flag p{
-            text-align: center;
-            line-height: 30px;
-            font-size: 20px;
-            color: rgb(69, 74, 78);
-        }
+        
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
     <script src="jquery.min.js"></script>
     <script>
-        $(function(param){
-            // $.get("https://restcountries.com/v3.1/all"),function(response){
-            //     var data= ""
-            //     $.each(response,function(i,v){
-            //         data += `
-            //                 <img src="${v.flag.png}" >
-            //         `
-            //     })
-            //     $("#countries").html(data)
-            // }
-            // $("#btn").on("click",function(param){
-                
-            
-            // })
+        $(function(parm){
             $.ajax({
                 url: "https://restcountries.com/v3.1/all",
-                type: "GET",
-                dataType: "json",
+                data: "GET",
+                typedata: "json",
             }).done(function(json){
                 console.log(json)
-                var allData =""
+                var allData = ""
                 var data = ""
                 $.each(json,function(i,v){
                     allData +=`
-                            <li>
-                                <img src="${v.flags.png}" width="212" height="170px">
-                                <p class="name"> ${v.name.common}</p>
-                                <div class="capital">
-                                    <P >Capital : ${v.capital}</p>
-                                    <P>Region : ${v.region}</p>
-                                    <P>Population : ${v.population}</p>
-                                    <button class="about" data-index="${i}">About</button>
+                                <div class="border_img">
+                                    <div class="flag_border">
+                                        <img src="${v.flags.png}" width="170" height="100">
+                                        <p  class="name">${v.name.common}</p>
+                                        <div class="words"> 
+                                            <P>${v.capital}</p>
+                                            <P>${v.region}</p>
+                                            <P>${v.population}</p> 
+                                        </div>
+                                        <button class="btn" data-index="${i}">About</button>
+                                    </div>
                                 </div>
-                                
-                            </li>
-                            
-                            `
+                    `
                 })
                 $("#countries").html(allData)
+                
                 $("#countries").on('click',"button",function(param){
                     $("#countries").hide();
                     var index = $(this).data("index")
                     if(index != -1){
                         data +=`
                                 <div class="flag">
-                                    <img  src="${json[index].flags.png}" width= "340px" height="250px" >
+                                    <img  src="${json[index].flags.png}" width= "220px" height="150px" >
                                     <p>Name:${json[index].name.common}</p>
                                     <p>Capital:${json[index].capital}</p>
                                     <p>Capital:${json[index].region}</p>
@@ -128,20 +124,18 @@
                                 
                         `
                     }
-                    $("#show").html(data)
+                    $("#about").html(data)
                 })
+                
             })
-
         })
     </script>
 </head>
 <body>
-    <div id="countries">
-
-    </div>
-    <div id="show">
-
-    </div>
-    
+    <nav class="nav_bar">
+        <p class="title" >Countries Information</p>
+</nav>
+    <div id="countries"></div>
+    <div id="about"></div>
 </body>
 </html>
