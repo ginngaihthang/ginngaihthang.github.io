@@ -11,31 +11,46 @@
             padding: 0px;
         }
         body{
-            background: linear-gradient(to right,#845EC2,#00C9A7);
+            /* background: linear-gradient(to right,#845EC2,#00C9A7); */
+            background-color: white;
         }
+        
         .nav_bar{
             width: 100%;
             position: fixed;
+            
             /* border: 1px solid black; */
             background-color: black;
             
         }
         .title{
             padding: 10px 0px;
-            text-align: center;
+            
             font-size: 17px;
-            text-transform: uppercase;
+            text-align: center;
+            /* text-transform: uppercase; */
             color: white;
             word-spacing: 5px;
             /* letter-spacing: 3px; */
             font-weight: unset;
             font-family: 'Lobster',cursive;
+            display: block;
         }
+        .title p{
+            display: inline-block;
+        }
+        
         #countries{
             justify-content: center;
             display: grid;
             grid-template-columns: auto auto ;
             
+        }
+        #search{
+            width: 140px;
+            text-align: right;
+            outline: none;
+            padding-right: 5px;
         }
         .border_img{
             padding: 10px;   
@@ -72,6 +87,10 @@
             text-align: center;
             color: white;
         }
+        #about{
+            margin-top: 15px;
+            background-color: rgb(85, 79, 79);
+        }
         
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -89,6 +108,9 @@
                 var allData = ""
                 var data = ""
                 $.each(json,function(i,v){
+                    
+                        
+                   
                     allData +=`
                                 <div class="border_img">
                                     <div class="flag_border">
@@ -105,7 +127,28 @@
                     `
                 })
                 $("#countries").html(allData)
-                
+
+                $("#click").on("click",function(param){
+                    
+                    var num = ""
+                    $.each(json,function(i,v){
+                        
+                        console.log(v.name.commom)
+                        // if(v.name.common != search){
+                        //     document.write( "is not fond!")
+                        // }else{
+                            
+                        //     num = `
+                        //     <img src="${v.flags.png}" width="170" height="100">
+                        //     `
+                        // }
+                        
+                    })
+                    $("#img_search").html(num)
+                    //console.log(num)
+                   
+                })
+
                 $("#countries").on('click',"button",function(param){
                     $("#countries").hide();
                     var index = $(this).data("index")
@@ -125,17 +168,35 @@
                         `
                     }
                     $("#about").html(data)
+                    //console.log(data)
+                    
+                    
                 })
                 
             })
+            
+            // function seacrh(){
+            //     var search = document.querySelector("#search").value
+            //     if(data.name == seacrh){
+            //         <img  src="${json[index].flags.png}" width= "220px" height="150px" >
+            //     }
+            // }
         })
+
     </script>
 </head>
 <body>
     <nav class="nav_bar">
-        <p class="title" >Countries Information</p>
-</nav>
+        <div class="title">
+            <p  >Countries Information</p>
+            <input type="text" name="name" id="search">
+            
+        </div>
+    </nav>
+    <div class="space"></div>
     <div id="countries"></div>
     <div id="about"></div>
+    <div id="img_search"></div>
+    
 </body>
 </html>
