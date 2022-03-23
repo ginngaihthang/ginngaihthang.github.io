@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0px;
+
+            padding: 0px;
+        }
+        ul.link-wapper{
+            list-style-type: none;
+            margin: 20px;
+            padding: 0px;
+            text-align: center;
+        }
+        ul.link-wapper li{
+            display: inline-block;
+        }
+        ul.link-wapper li  a{
+            text-decoration: none;
+            padding: 8px;
+        }
+        .content{
+            display: none;
+            
+            padding: 10px 10px;
+            margin: 0px auto 0px;
+            width: 90%;
+        }
+        .content p{
+            text-align: justify;
+        }
+        .active{
+            color: #0037ff;
+            
+            border-bottom: 1px solid red;
+        }
+        /* shop */
+        .product {
+            display: grid;
+            grid-template-columns: auto auto;
+            text-align: center;
+            justify-content: center;
+            
+        }
+        .product div{
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            border-radius: 10px;
+            margin: 10px;
+            display: block;
+        }
+        .product div p{
+            text-align: center;
+            font-size: 14px;
+            color: rgb(110, 108, 104);
+            margin-top: 5px;
+        }
+        button{
+            padding: 3px 10px;
+            border-radius: 25px;
+            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+            background: none;
+            margin: 9px 0px;
+            border: none;
+            
+        }
+        /* cartnoti */
+        #cartnoti{
+            color: red;
+        }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script>
+        $(function(param){
+            $(".content").first().slideDown()
+            $("ul.link-wapper li a").on("click",function(event){
+                var current_tab = $(this);
+                $("ul.link-wapper li a").removeClass('active')
+                current_tab.addClass('active')
+                $(".content").slideUp()
+                current_tab_href = current_tab.attr('href')
+                $(current_tab_href).slideDown()
+
+                event.preventDefault()
+            })
+            //Localstorage
+            $(".atc").on("click",function(param){
+                var name = $(this).data("name");
+                var price = $(this).data("price");
+                var id = $(this).data("id");
+                var item = {
+                    id: id, name: name, price: price, qty: 1
+                }
+                var cartArr = []
+                var cartStr = localStorage.getItem("cart")
+                if(!(cartStr)){
+                    cartArr.push(item)
+                }
+                else{
+                    cartArr = JSON.parse(cartStr)
+                    var old = false
+                    $.each(cartArr,function(i,v){
+                        if(v.id == id && old == false){
+                            v.qty++;
+                            old = true
+                        }
+                    })
+                    if(old == false){
+                            cartArr.push(item)
+                    }
+
+                }
+                localStorage.setItem("cart",JSON.stringify(cartArr))
+                cartnoti();
+                showtable();
+            })
+            // cartnoti
+            function cartnoti(){
+                var cartStr = localStorage.getItem("cart");
+                countnoti = 0
+                if(cartStr){
+                    var cartArr = JSON.parse(cartStr)
+                    $.each(cartArr,function(i,v){
+                        countnoti += v.qty;
+                    })  
+                }
+                $("#cartnoti").html(countnoti)
+            }
+
+            //show table
+            function showtable(){
+                var cartStr = localStorage.getItem("cart")
+                data = ""
+                var total = 0
+                if(cartStr){
+                    var cartArr = JSON.parse(cartStr)
+                    $.each(cartArr,function(i,v){
+                        total += v.price * v.qty;
+                        data += `
+                                    <tr>
+                                        <td>${i++}</td>
+                                        <td>${v.name}</td>
+                                        <td>${v.price}</td>
+                                        <td>${v.qty}</td>
+                                        <td>${v.price*v.qty}</td>
+                                    </tr>
+                                    
+                        `
+                        data +=`
+                                    <tr>
+                                        <td colspan="4">Total</td>
+                                        <td>${total}</td>
+                                    </tr>
+                        `
+                    })
+                    
+                }
+                $("#tbody").html(data)
+            }
+
+        })
+    </script>
+</head>
+<body>
+    <div class="nav_bar">
+        <ul class="link-wapper">
+            <li>
+                <a href="#home" class="active">Home</a>
+            </li>
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+            <li>
+                <a href="#about">About</a>
+                
+            </li>
+            <li>
+                <a href="#shop">Shop</a>
+            </li>
+            <li>
+                <a href="#cart">Cart</a><span id="cartnoti" ></span>
+            </li>
+        </ul>
+        <div class="content" id="home">
+            <h3>Home Page</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam, veniam. Vero accusantium maxime dolorum architecto in voluptatum officia hic exercitationem.</p>
+        </div>
+        <div class="content" id="contact">
+            <h3>Home Page</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam, veniam. Vero accusantium maxime dolorum architecto in voluptatum officia hic exercitationem.</p>
+        </div>
+        <div class="content" id="about">
+            <h3>Home Page</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam, veniam. Vero accusantium maxime dolorum architecto in voluptatum officia hic exercitationem.</p>
+        </div>
+        <div class="content" id="shop">
+            <h3>Shop Page</h3>
+            <div class="product">
+                <div>
+                    <img src="image/a10.jpg" alt="" height="150" width="150">
+                    <p>ASUS i3 3Gen</p>
+                    <p>Ks 800,000</p>
+                    <button class="atc" data-name="ASUS i3 3Gen" data-price="800000" data-id="1">Add to cart</button>
+                </div>
+                <div>
+                    <img src="image/a2.jpg" alt="" height="150" width="150">
+                    <p>ASUS Zenbook 14" i7</p>
+                    <p>Ks 750,000</p>
+                    <button class="atc" data-name="ASUS Zenbook 14 i7" data-price="750000" data-id="2">Add to cart</button>
+                </div>
+                <div>
+                    <img src="image/a4.jpg" alt="" height="150" width="150">
+                    <p>Hp Probook 440 G5</p>
+                    <p>Ks 1,000,000</p>
+                    <button class="atc" data-name="Hp Probook 440 G5" data-price="1000000" data-id="3">Add to cart</button>
+                </div>
+                <div>
+                    <img src="image/a5.jpg" alt="" height="150" width="150">
+                    <p>Dell Inspiron 3511</p>
+                    <p>Ks 500,000</p>
+                    <button class="atc" data-name="Dell Inspiron 3511" data-price="500000" data-id="4">Add to cart</button>
+                </div>
+                <div>
+                    <img src="image/a7.jpg" alt="" height="150" width="150">
+                    <p>Acer Swift </p>
+                    <p>Ks 1,700,000</p>
+                    <button class="atc" data-name="Acer Swift" data-price="1700000" data-id="5" >Add to cart</button>
+                </div>
+                <div>
+                    <img src="image/a9.jpg" height="150" width="150">
+                    <p>Dell Latitude E7480</p>
+                    <p>Ks 700,000</p>
+                    <button class="atc" data-name="Dell Latitude E7480" data-price="700000" data-id="6">Add to cart</button>
+                </div>
+            </div>
+                
+        </div>
+        <div class="content" id="cart">
+            <h3>Home Page</h3>
+            <table border="1" cellspacing="0" width="100%"> 
+                <thead>
+                    <tr>
+                        <th>No.</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Qty</th>
+                        <th>SubTotal</th>                    
+                    </tr>
+                </thead>
+                <tbody id="tbody">
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</body>
+</html>
