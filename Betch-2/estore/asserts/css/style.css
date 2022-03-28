@@ -1,0 +1,166 @@
+@font-face{
+    font-family: 'poppins';
+       src: url(fonts/Poppins/Poppins-Regular.ttf) ;
+       
+}
+
+@font-face {
+    font-family: 'poppins-bold';
+    src: url(fonts/Poppins/Poppins-Bold.ttf);
+}
+
+
+@font-face {
+    font-family: 'poppins-black';
+    src: url(fonts/Poppins/Poppins-SemiBold.ttf);
+}
+
+body{
+    font-family: 'poppins' !important;
+}
+
+#headerbottom{
+    margin-top: 25px;
+}
+#basic-addon2{
+    background: #ffc107;;
+}
+.primary-color{
+    color: #ffc107;
+    font-weight: bold;
+}
+
+.secondary-color{
+    color: #292560
+}
+.font-color{
+    color: #707070;
+}
+#topheader a:hover{
+    color: #fdb03d;
+    transition: .5s all;
+    cursor: pointer
+}
+
+#navigation{
+    background-color: #292560
+}
+.categories{
+    background-color: transparent;
+    border: 0.1px solid #575381;
+}
+
+.navbar-dark  .navbar-nav .nav-link{
+    color: #fff;
+    font-size: 15px;
+    font-family: 'poppins-bold';
+}
+.navbar-dark  .navbar-nav .nav-link.active{
+    color: #fdb03d;
+}
+.navbar-dark  .navbar-nav .nav-link:hover{
+    color: #fdb03d;
+    transition: .5s all;
+}
+
+/* product */
+#banner .banner1-item{
+    background-image: url(../../image/home.png);
+    background-position: center;
+    
+    
+}
+#banner .banner2-item{
+    background-image: url(../../image/h19.png);
+    background-position: center;
+
+   
+}
+#banner .banner3-item{
+    background-image: url(../../image/h18.png);
+    background-position: center;
+}
+#banner .banner4-item{
+    background-image: url(../../image/h20.png);
+    background-position: center;
+    
+}
+#banner .banner-style{
+    min-height: 90vh;
+}
+
+#banner .shopBtn{
+    background-color:  #fdb03d;
+    color: white;
+    padding: 7px 20px;
+
+}
+
+
+
+.product-new-badge{
+    background-color: #ff2978;
+    color: #fff;
+    position: absolute;
+    border-radius: 50px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 600;
+    font-size: 13px;
+    left: 10px;
+    top: 10px;
+}
+
+.product-new-badge1{
+    background-color:  #fdb03d;
+    color: #fff;
+    position: absolute;
+    border-radius: 50px;
+    text-align: center;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    font-weight: 600;
+    font-size: 13px;
+    left: 10px;
+    top: 10px;
+}
+.addtocartBtn{
+    background-color: #29255f;
+    border-color: #29255f;
+}
+.addtocartBtn:hover{
+    background-color: #fdb03d;
+    border-color: #fdb03d;
+    transition: .5s all;
+}
+.deals{
+    height: 300px;
+    
+}
+.exiciting{
+    font-size: 50px;
+    font-family: 'poppins-bold';
+    color: #fff;
+}
+
+
+#about{
+    /* background-image: url(../../image/); */
+
+    height: 340x;
+    
+}
+.productabout{
+    font-family: 'poppins-bold';
+}
+/* footer */
+#footer{
+    background-color: black;
+}
+
+#facebookicon{
+    color: #6788ce;
+}

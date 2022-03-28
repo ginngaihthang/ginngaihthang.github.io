@@ -33,10 +33,10 @@
         }
         .content p{
             text-align: justify;
-        }
-        .active{
+        }   
+
+        ul.link-wapper li a.active{
             color: #0037ff;
-            
             border-bottom: 1px solid red;
         }
         /* shop */
@@ -142,7 +142,7 @@
                         total += v.price * v.qty;
                         data += `
                                     <tr>
-                                        <td>${i++}</td>
+                                        <td>${++i}</td>
                                         <td>${v.name}</td>
                                         <td>${v.price}</td>
                                         <td>${v.qty}</td>
@@ -150,14 +150,14 @@
                                     </tr>
                                     
                         `
-                        data +=`
+                        
+                    })
+                    data +=`
                                     <tr>
                                         <td colspan="4">Total</td>
                                         <td>${total}</td>
                                     </tr>
                         `
-                    })
-                    
                 }
                 $("#tbody").html(data)
             }
