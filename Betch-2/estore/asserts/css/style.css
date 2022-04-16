@@ -66,7 +66,7 @@ body{
 /* product */
 #banner .banner1-item{
     background-image: url(../../image/home.png);
-    background-position: center;
+    background-position: center
     
     
 }
@@ -74,7 +74,7 @@ body{
     background-image: url(../../image/h19.png);
     background-position: center;
 
-   
+       
 }
 #banner .banner3-item{
     background-image: url(../../image/h18.png);

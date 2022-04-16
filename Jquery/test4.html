@@ -142,10 +142,12 @@
                         total += v.price * v.qty;
                         data += `
                                     <tr>
-                                        <td>${++i}</td>
+                                        <td>${++i}<button class="btndel" data-index="${--i}">X</button></td>
                                         <td>${v.name}</td>
                                         <td>${v.price}</td>
-                                        <td>${v.qty}</td>
+                                        <td>
+                                            <input type="Number"data-index="${i}" value="${v.qty}" min="1" class=changeqty>    
+                                        </td>
                                         <td>${v.price*v.qty}</td>
                                     </tr>
                                     
@@ -161,6 +163,23 @@
                 }
                 $("#tbody").html(data)
             }
+
+            $("#tbody").on("click",".btndel",function(param){
+                
+            })
+
+            $("#tbody").on("change",".changeqty",function(param){
+                var index= $(this).data("index")
+                var qty = Number($(this).val())
+                var cartStr = localStorage.getItem("cart")
+                var cartArr = JSON.parse(cartStr)
+                cartArr[index].qty = qty;
+                localStorage.setItem("cart",JSON.stringify(cartArr))
+                cartnoti();
+                showtable();
+            })
+
+
 
         })
     </script>

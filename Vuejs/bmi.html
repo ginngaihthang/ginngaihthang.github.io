@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://unpkg.com/vue@3"></script>
+</head>
+<body>
+    <div id="app">
+
+        <label for="height">Your Height : </label>
+        <input type="number" v-model.number="heightFet"> <span>Feets</span>
+        <input type="number" v-model.number="heightInch"> <span>Inches</span><br><br>
+        <label for="weight">Your Weight</label>
+        <input type="number" v-model.number="weight" id="weight"> <span>Kilogram</span><br><br>
+        <button @click="compute()">Compute Bmi</button>
+        <div v-if="status==true">
+            <p>Your BMI is <strong>{{bmi}}</strong></p>
+            <p v-if="bmi < 18.5">Under Weight</p>
+            <p v-else-if="bmi >= 18.5 && bmi <= 24.9">Normal Weight</p>
+            <p v-else-if="bmi >=25 && bmi <= 29.9">Over Weight</p>
+            <p v-else="bmi > 30">Obesity</p>
+        </div>
+    </div>
+    <script >
+        const app = Vue.createApp({
+            data(){
+                return{
+                    status: false,
+                    weight: "",
+                    heightFet: "",
+                    heightInch: "",
+                    bmi: "",
+                }
+            },
+            methods:{
+                compute(){
+                    this.status= true
+                    let h = (this.heightFet *12) + this.heightInch
+                    this.bmi = this.weight * 703 / (h*h)
+                }
+            }
+        })
+        app.mount("#app")
+    </script>
+    
+</body>
+</html>
