@@ -33,7 +33,7 @@ export default {
     },
     mounted(){
             let id = this.$route.params.id
-            axios.get(`http://www.omdbapi.com/?apikey=${venv.apikey}&i=${id}`)
+            axios.get(`https://www.omdbapi.com/?apikey=${venv.apikey}&i=${id}`)
                 .then(response => {
                     this.moviedetail = response.data
                     console.log(this.moviedetail)

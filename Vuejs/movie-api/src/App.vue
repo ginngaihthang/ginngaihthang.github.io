@@ -38,7 +38,7 @@ export default {
       SearchMovies(){
         if(this.search!= ""){
           console.log(this.search)
-            axios.get(`http://www.omdbapi.com/?apikey=${venv.apikey}&s=${this.search}`)
+            axios.get(`https://www.omdbapi.com/?apikey=${venv.apikey}&s=${this.search}`)
               .then(response => {
                   this.movie = response.data.Search
                   console.log(this.movie)

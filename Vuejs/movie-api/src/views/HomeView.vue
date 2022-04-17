@@ -124,7 +124,7 @@ export default {
     }
   },
   mounted(){
-    axios.get(`http://www.omdbapi.com/?apikey=${venv.apikey}&s=movie`)
+    axios.get(`https://www.omdbapi.com/?apikey=${venv.apikey}&s=movie`)
               .then(response => {
                   this.movies = response.data.Search
                  
@@ -136,7 +136,7 @@ export default {
       SearchMovies(){
         if(this.search!= ""){
           console.log(this.search)
-            axios.get(`http://www.omdbapi.com/?apikey=${venv.apikey}&s=${this.search}`)
+            axios.get(`https://www.omdbapi.com/?apikey=${venv.apikey}&s=${this.search}`)
               .then(response => {
                   this.allmovie = response.data.Search.slice(5,-1)
                   this.movie0 = response.data.Search[0]
