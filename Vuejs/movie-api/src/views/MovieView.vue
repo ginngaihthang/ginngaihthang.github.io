@@ -1,6 +1,6 @@
 <template>
     <div class="movie">
-        <div class="card mb-3 bg-transparent">
+        <div class="card my-3 bg-transparent border-0">
         <div class="row g-0">
             <div class="col-md-4">
             <img :src="moviedetail.Poster" class="img-fluid" alt="IMG Poster">
