@@ -8,7 +8,7 @@ operation,result=multiple()
 print(operation,result)
 '''
 result_list=multiple()
-print(result_list[1])
+print(result_list)
 
 
 def multiple():

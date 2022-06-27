@@ -2,7 +2,7 @@
 s='This is a string!'
 slist=s.split()
 
-mystring='-'.join(slist)
+mystring='-'.join(s)
 print(mystring)
 
 print(slist)

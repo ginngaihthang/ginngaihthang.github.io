@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- Name <input id="namebox" type="text" > <br> <br>
+    Roll No <input type="text" id="rollbox"><br><br>
+    Section <input type="text" id="secbox"> <br><br>
+    Gender <input type="text" id="genbox"> <br><br>
+    <button id="insert">Insert</button>
+    <button id="select">Select</button>
+    <button id="update">Update</button>
+    <button id="delete">Delete</button> -->
+
+    <!-- <label for="">Image Name</label>
+    <input type="text" id="namebox">
+    <label for="" id="extlab"></label> <br><br>
+    <img src="" id="myimg" alt="IMG">
+    <label for="upprogress"></label><br><br>
+
+    <button id="selbtn">Select Image</button>
+    <button id="upbtn">Upload Image</button>
+    <button id="downbtn">Retrieve Image</button>
+    
+
+    
+    <script type="module">
+
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-app.js";
+        // import { getAnalytics } from "https://www.gstatic.com/firebasejs/9.7.0/firebase-analytics.js";
+        
+        const firebaseConfig = {
+          apiKey: "AIzaSyBz2_pVQOXqt2TkeUEZald2DhgpbTX4maY",
+          authDomain: "vue-app-838cd.firebaseapp.com",
+          databaseURL: "https://vue-app-838cd-default-rtdb.firebaseio.com",
+          projectId: "vue-app-838cd",
+          storageBucket: "vue-app-838cd.appspot.com",
+          messagingSenderId: "846352320296",
+          appId: "1:846352320296:web:de72f35d7fdad3bbf9b21d",
+          measurementId: "G-ZKD87XYTBM"
+        };
+        const app = initializeApp(firebaseConfig);
+        // const analytics = getAnalytics(app);
+
+        import { getStorage, ref as sRef, uploadBytesResumable, getDownloadURL}
+            from "https://www.gstatic.com/firebasejs/9.7.0/firebase-storage.js"
+        //Variables & Peferances
+        var files = [];
+        var reader = new FileReader();
+
+        var namebox = document.getElementById('namebox');
+        var extlab = document.getElementById('extlab');
+        var myimg = document.getElementById('myimg');
+        var proglab = document.getElementById('upprogress');
+        var SelBtn = document.getElementById('selbtn');
+        var UpBtn = document.getElementById('upbtn');
+        var DownBtn = document.getElementById('sownbtn');
+
+        var input = document.createElement('input');
+        input.type = 'file';
+
+        input.onchange = e =>{
+            files =e.target.files;
+
+            var extention = GetFileExt(files[0]);
+            var name = GetFileName(files[0]);
+
+            namebox.value = name;
+            extlab.innerHTML = extention;
+
+            reader.readAsDataURL(files[0]);
+        }
+        reader.onload = function(){
+            myimg.src = reader.result;
+        }
+
+        //S;election
+        SelBtn.onclick = function(){
+            input.click();
+        }
+        function GetFileExt(file){
+            var temp = file.name.split('.');
+            var ext = temp.slice((temp.length-1),(temp.lenngth));
+            return '.' + ext[0];
+        }
+        function GetFileName(file){
+            var temp = file.name.split('.');
+            var fname = temp.slice(0,-1).join('.');
+            return fname;
+        }
+
+        // upload
+        async function UploadProcess(){
+            var ImgToUpload = files[0];
+            var ImgName = namebox.value + extlab.innerHTML;
+
+            const metaData = {
+                contentType: ImgToUpload.type
+            }
+
+            const storage = getStorage();
+
+            const stroageRef = sRef(storage, "Images/" +ImgName);
+
+            const UploadTask = uploadBytesResumable(stroageRef, ImgToUpload, metaData);
+
+            UploadTask.on("state-changed", (snapshot)=>{
+                var progess = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+                proglab.innerHTML = "Upload" + progess + "%";
+            },
+            (error)=>{
+                alert("error: image not uploaded!");
+            },
+            ()=>{
+                getDownloadURL(UploadTask.snapshot.ref).then((downloadURL)=>{
+                    console.log(downloadURL);
+                });
+            }
+            )
+        }
+        UpBtn.onclick = UploadProcess;
+      </script> -->
+
+    <!-- <script id="MainScript"> 
+        const firebaseConfig = {
+            apiKey: "AIzaSyBz2_pVQOXqt2TkeUEZald2DhgpbTX4maY",
+            authDomain: "vue-app-838cd.firebaseapp.com",
+            databaseURL: "https://vue-app-838cd-default-rtdb.firebaseio.com",
+            projectId: "vue-app-838cd",
+            storageBucket: "vue-app-838cd.appspot.com",
+            messagingSenderId: "846352320296",
+            appId: "1:846352320296:web:de72f35d7fdad3bbf9b21d",
+            measurementId: "G-ZKD87XYTBM"
+        };
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+        
+
+        //Ready Data
+        var nameV, rollV, secV, genV;
+        
+        function Ready(){
+            nameV =document.getElementById('namebox').value;
+            rollV =document.getElementById('rollbox').value;
+            secV =document.getElementById('secbox').value;
+            genV =document.getElementById('genbox').value;
+            
+        }
+
+        // Insert Data
+        document.getElementById('insert').onclick = function(){
+            Ready();
+            firebase.database().ref('student/'+rollV).set({
+                NameOfStudent: nameV,
+                RollV: rollV,
+                SecV: secV,
+                GenV: genV
+            })
+        }
+    </script> -->
+
+</body>
+</html>

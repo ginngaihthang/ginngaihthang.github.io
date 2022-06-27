@@ -64,10 +64,12 @@ body{
 }
 
 /* product */
+.bannerItem{
+    position: relative
+}
 #banner .banner1-item{
-    background-image: url(../../image/home.png);
-    background-position: center
-    
+    background-image: url(../../image/home1.png);
+    background-position: center;
     
 }
 #banner .banner2-item{

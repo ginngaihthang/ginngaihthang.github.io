@@ -1,0 +1,4 @@
+name: Gin Ngaih Thang
+age: 20
+phone number: 09974103164
+email: 294894

@@ -13,8 +13,8 @@ infile=open('table.dat','r')
 lines=infile.readlines()
 line=infile.read()
 infile.close()
-#print(lines)
-#print(line)
+# print(lines)
+# print(line)
 data={}
 fristline=lines[0]
 print(fristline)
@@ -24,9 +24,9 @@ for p in properties:
     data[p]={}
 
 for line in lines[1:]:
-    #print(line)
+    print(line)
     words=line.split()
-    #print(words)
+    print(words)
     i=int(words[0])
     values=words[1:]
     print(values)

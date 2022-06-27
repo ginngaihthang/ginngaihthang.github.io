@@ -17,7 +17,7 @@ def factorial(n):
         return n*factorial(n-1)
     
 def main():
-    print(factorial(1))
+    print(factorial(5))
 
 main()
     

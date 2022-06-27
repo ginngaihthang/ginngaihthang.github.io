@@ -3,7 +3,7 @@ def double(x):
 
 def test_double():
     x=4
-    expected=8
+    expected=7
     computed=double(x)
     success= computed == expected
     msg = 'Computed %s, expected %s' %(computed,expected)

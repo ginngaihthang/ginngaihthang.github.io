@@ -1,23 +1,25 @@
 <template>
     <div class="movie">
-        <div class="card my-3 bg-transparent border-0">
-        <div class="row g-0">
-            <div class="col-md-4">
-            <img :src="moviedetail.Poster" class="img-fluid" alt="IMG Poster">
-            </div>
-            <div class="col-md-8 col-sm-12  col-12">
-            <div class="card-body mt-md-5 ">
-                <h5 class="card-title mb-0">{{moviedetail.Title}}</h5>
-                <p class="card-text mb-0"><small>{{moviedetail.Language}}</small></p>
-                <p class="card-text mb-0"><small>{{moviedetail.Plot}}</small></p>
-                <p class="card-text mb-0"><small class="text-muted">Writer : {{moviedetail.Writer}}</small></p>
-                <p class="card-text mb-0"><small class="text-muted">Actor : {{moviedetail.Actors}}</small></p>
-                <p class="card-text mb-0"><small class="text-muted">Country:{{moviedetail.Awards}}</small></p>
-                <p class="card-text mb-0"><small class="text-muted">Rerleased:{{moviedetail.Released}}</small></p>
-            </div>
+        <div class="card my-3 bg-transparent border-0 ">
+            <div class="row g-0">
+                <div class="col-md-3">
+                
+                </div>
+                <div class="col-md-3">
+                    <img :src="moviedetail.Poster" class="img-fluid w-md-50" alt="IMG Poster">
+                </div>
+                <div class="col-md-6 col-sm-12  col-12">
+                    <div class="card-body mt-md-5">
+                        <h5 class="card-title mb-0 text-white text-bolder">{{moviedetail.Title}}</h5>
+                        <p class="card-text mb-0 text-white"><small>{{moviedetail.Language}}</small></p>
+                        <p class="card-text mb-0 text-white"><small>{{moviedetail.Plot}}</small></p>
+                        
+                        <p class="card-text mb-0 text-white"><small>{{moviedetail.Awards}}</small></p>
+                        <p class="card-text mb-0 text-white"><small>Rerleased:{{moviedetail.Released}}</small></p>
+                    </div>
+                </div>
             </div>
         </div>
-    </div>
     </div>
 </template>
 

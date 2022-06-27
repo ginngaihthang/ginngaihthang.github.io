@@ -40,7 +40,7 @@
                 console.log(item)
                 var cartArr = []
                 var cartStr = localStorage.getItem('cart');
-                //console.log(cartStr)
+                // console.log(cartStr)
                 //console.log($.type(cartStr));
                 
                 if(!cartStr){
@@ -51,9 +51,9 @@
                     var old = false
                     $.each(cartArr,function(i,v){
                         if(v.id == id && old == false){
-                        qty++
-                        old = true
-                    }
+                            v.qty++
+                            old = true
+                        }
                     
                     })
                     if(old == false){

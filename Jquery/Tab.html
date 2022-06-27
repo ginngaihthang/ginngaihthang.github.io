@@ -156,7 +156,7 @@
         })
 
         //cartnoti
-        // cartnoti();
+         cartnoti();
 
         function cartnoti(){
           var cartStr = localStorage.getItem("cart")
@@ -167,6 +167,7 @@
               noticount +=  v.qty
             })
           }
+          localStorage.setItem("cart",JSON.stringify(cartArr))
           $("#cartnoti").html(noticount)
         }
         
@@ -249,7 +250,6 @@
           localStorage.setItem("cart",JSON.stringify(cartArr))
             cartnoti();
             showtable();
-
         })
         $(".atc").on('click',function(param){
           Swal.fire({
@@ -258,7 +258,9 @@
           title: 'This item  has been saved to cart',
           showConfirmButton: false,
           timer: 1400
+          
           })
+          
         })
 
         // , function
