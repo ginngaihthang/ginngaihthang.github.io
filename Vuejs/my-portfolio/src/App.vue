@@ -19,6 +19,9 @@
               <a class="nav-link" href="#skill">Skills</a>
             </li>
             <li class="nav-item">
+              <a class="nav-link" href="#service">Service</a>
+            </li>
+            <li class="nav-item">
               <a class="nav-link" href="#portfolio">Portfolio</a>
             </li>
             <li class="nav-item">

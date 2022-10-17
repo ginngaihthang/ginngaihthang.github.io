@@ -1,7 +1,7 @@
 <template>
-     <div id="">
+     <div id="service">
         <div class="row min-vh-100" >  
-              <h1 class="d-flex flex-column justify-content-center my-2">What I Do</h1> 
+              <h1 class="d-flex flex-column justify-content-center ">What I Do</h1> 
             <!-- <div class="section-title">
           <h2>What I Do</h2>
           <p>Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.</p>
