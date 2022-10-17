@@ -53,17 +53,7 @@
             font-size: 13px;
         }
         
-        #btn{
-            margin-left: 750px;
-            margin-top: 40px;
-            padding: 12px 40px;
-            font-size: 18px;
-            border-radius:  5px;
-            box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
-            background: linear-gradient(to right,#845EC2,#D5CABD);
-            background: none;
-            border: none;
-        }
+        
     </style>
     <script src="jquery.min.js"></script>
     <script>
@@ -81,7 +71,7 @@
 
             //     $("#memes").html(data)
             // })
-            $("#btn").on('click',function(param){
+     
                 $.get("https://api.imgflip.com/get_memes",function(response){
                     console.log(response)
                 var data = ""
@@ -98,8 +88,7 @@
                 })
                 console.log(response.data.memes) 
                 $("#memes").html(data)
-                }) 
-             }) 
+                })  
              $("#memes").on('click','#memes_name',function(e){
                 e.preventDefault()
              })
@@ -148,7 +137,6 @@
 <body>
 
    
-    <button id="btn">GETmethod</button>
     
     <div id="memes">
         
